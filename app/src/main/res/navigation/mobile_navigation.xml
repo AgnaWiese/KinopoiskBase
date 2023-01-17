@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_movies">
+
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="ru.trushkina.kinopoiskbase.presentation.list.MovieListFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_open_movie"
+            app:destination="@id/navigation_movie_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="ru.trushkina.kinopoiskbase.presentation.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more" />
+
+    <fragment
+        android:id="@+id/navigation_movie_details"
+        android:name="ru.trushkina.kinopoiskbase.presentation.details.MovieDetailsFragment"
+        tools:layout="@layout/fragment_movies_details">
+<!--        <argument-->
+<!--            android:name="movie"-->
+<!--            app:argType="com.evgtrush.foodbag.domain.models.Recipe"-->
+<!--            app:nullable="true"-->
+<!--            android:defaultValue="@null" />-->
+    </fragment>
+
+</navigation>
